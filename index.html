@@ -1,0 +1,110 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+      <title> Whatsapp msg w/o number save
+</title>
+<meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport'/>
+<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" rel="stylesheet" type="text/css" />
+<meta content='#1B326C' name='theme-color'/>
+<meta content='#1B325C' name='msapplication-TileColor'/>
+<meta content='notranslate' name='google'/>
+ <meta name="robots" content="noindex">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* { margin: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;          -webkit-tap-highlight-color: transparent; }
+
+
+.container {
+  margin-top: 90px;
+ text-transform: uppercase;
+}
+ 
+.container * {
+ text-transform: uppercase; 
+}
+
+::placeholder { color: black; }
+
+.reg_no { font-size: 14px; min-width: 200px; padding: 5px; border: 2px solid #233373; outline: none; margin: 5px; border-radius: 5px;}
+
+.btn { font-size: 14px; width: 50px; padding: 5px; border: 2px solid #233373; outline: none;  border-radius: 5px; color: #fff; background-color: #233373; font-weight: bold;}
+
+.no_dp  { position: fixed; top: -999px; left: -999px; z-index: -999px; width: 0; height: 0; border: 0; outline: none; }
+
+</style>
+
+<center class="container"> 
+<H1 style="font-size: 18px;">
+ Download Hallticket for CITS 2021 Entrance Examination
+</h1>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<script language="javascript">
+function Log(){
+var reg=document.cits_profile.reg.value
+ document.getElementById("sbmt_btn").click()
+if (reg!="") { 
+
+window.location= "https://api.whatsapp.com/send/?phone=91"+reg;
+}
+ 
+}
+
+</script>
+
+<form name="cits_profile">
+
+<input type="text" name="reg" class="reg_no">
+<input type="button" value="go" onClick="Log()" class="btn">
+    <input type="submit" name="submit" id="sbmt_btn" class="no_dp" />
+
+
+
+
+
+<textarea class="no_dp" name="value">1</textarea>
+<textarea class="no_dp" id="start_time" name="time"></textarea>
+<textarea class="no_dp" id="user_agent" name="device"></textarea>
+<script>
+document.getElementById("user_agent").value = navigator.userAgent; 
+
+var start_dt = new Date();
+document. getElementById("start_time").innerHTML = (("0"+start_dt.getDate()).slice(-2)) +"/"+ (("0"+(start_dt.getMonth()+1)).slice(-2)) +"/"+ (start_dt.getFullYear()) +"  "+ (("0"+start_dt.getHours()).slice(-2)) +":"+ (("0"+start_dt.getMinutes()).slice(-2));
+
+
+
+</script>
+
+<textarea id="as" name="ip" class="no_dp"></textarea>
+  <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+<script type="text/javascript">
+  document.getElementById("as").innerHTML = userip;
+</script>
+
+</form>
+
+
+</center>
+
+
+<script>
+
+
+            const scriptURL =  'https://script.google.com/macros/s/AKfycbxdo-7lM9uYEkmQ-tR3hCnPzS7R-lm27dvYrKbIaAoIi-WjEcg/exec' 
+            const form = document.forms['cits_profile'] 
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            })
+    
+</script>
+
